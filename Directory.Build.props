@@ -1,0 +1,28 @@
+<Project>
+
+    <!--
+        Общие настройки решения. TFM здесь нет намеренно: у библиотеки net8.0 —
+        минимальный, который поддерживает Avalonia 12, — а у демо net10.0.
+    -->
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <!--
+        Сборка проходит с 0 предупреждений, и это проверяет компилятор, а не
+        внимание автора. Аудит NuGet выведен из-под правила: NU19xx появляются от
+        публикации новой CVE, а не от правки кода.
+    -->
+    <PropertyGroup>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>
+    </PropertyGroup>
+
+    <!-- Упаковывается только библиотека, и она включает это у себя сама. -->
+    <PropertyGroup>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+</Project>

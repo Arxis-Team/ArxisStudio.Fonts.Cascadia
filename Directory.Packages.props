@@ -1,0 +1,9 @@
+<Project>
+  <!-- Централизованные версии пакетов: одна цифра на решение. -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="Avalonia" Version="12.1.1" />
+  </ItemGroup>
+</Project>

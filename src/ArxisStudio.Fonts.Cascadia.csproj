@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>ArxisStudio.Fonts.Cascadia</RootNamespace>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <PackageId>ArxisStudio.Fonts.Cascadia</PackageId>
+        <Version>0.1.0</Version>
+        <Authors>ArxisStudio</Authors>
+        <Company>ArxisStudio</Company>
+        <Copyright>Copyright (c) 2026 ArxisStudio</Copyright>
+        <Product>ArxisStudio.Fonts.Cascadia</Product>
+        <Description>Моноширинный шрифт Cascadia Code, вшитый в сборку и подключаемый одной строкой: WithCascadiaFont(). Устроен как Avalonia.Fonts.Inter — коллекция fonts:Cascadia поверх встроенных ресурсов. Код и путь в ArxisStudio набраны им.</Description>
+        <PackageTags>avalonia;font;cascadia;monospace;arxisstudio</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia"/>
+    </ItemGroup>
+
+    <!--
+        Шрифт едет ресурсом сборки: коллекция ищет его по avares-адресу этой
+        папки, поэтому имя Assets менять нельзя, не поправив коллекцию.
+
+        Лицензия лежит рядом с ним и в пакете: SIL OFL 1.1 требует держать её
+        при шрифте, а MIT в PackageLicenseExpression относится к коду.
+    -->
+    <ItemGroup>
+        <AvaloniaResource Include="Assets/*.ttf"/>
+        <None Include="../LICENSE-CascadiaCode.txt" Pack="true" PackagePath="/"/>
+        <None Include="../README.md" Pack="true" PackagePath="/"/>
+    </ItemGroup>
+
+</Project>
